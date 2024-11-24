@@ -1,0 +1,145 @@
+/* Gaya Dasar untuk Halaman */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("background.jpg"); /* Ganti dengan nama file gambar Anda */
+    background-size: cover; /* Membuat gambar menutupi seluruh layar */
+    background-position: center; /* Memposisikan gambar di tengah */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Kontainer Utama */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Form Box */
+.form-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    max-width: 90%; /* Batas maksimal di layar kecil */
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Input Form */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Tombol Buat Akun */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #28a745; /* Warna hijau */
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #218838; /* Warna kuning saat hover */
+    color: rgb(255, 255, 255);
+}
+
+/* Link Kembali ke Login */
+a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+a:hover {
+    color: #347928; /* Warna hijau saat hover */
+}
+
+/* Pesan Sukses */
+.hidden {
+    display: none;
+    color: green;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Gaya untuk Input Password dengan Ikon */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+}
+
+.toggle-password:hover {
+    color: #000;
+}
+
+/* Media Query untuk Layar Kecil */
+@media screen and (max-width: 480px) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .form-box {
+        width: 90%; /* Lebar menyesuaikan layar kecil */
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 18px; /* Ukuran teks lebih kecil */
+    }
+
+    input {
+        font-size: 14px; /* Ukuran input lebih kecil */
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    a {
+        font-size: 12px; /* Ukuran link lebih kecil */
+    }
+
+    #successMessage {
+        font-size: 14px;
+    }
+}

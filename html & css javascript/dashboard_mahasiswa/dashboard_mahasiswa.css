@@ -1,0 +1,357 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Dashboard Layout */
+  .dashboard {
+    display: flex;
+    width: 100%;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 250px;
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+  }
+  
+  .sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+  }
+  
+  .sidebar ul li {
+    margin: 15px 0;
+  }
+  
+  .sidebar ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar ul li a:hover,
+  .sidebar ul li a.active {
+    background: #34495e;
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    background: #ecf0f1;
+  }
+  
+  .main-content header {
+    margin-bottom: 20px;
+  }
+  
+  .main-content h1 {
+    font-size: 2rem;
+    color: #34495e;
+  }
+  
+  .content-section {
+    display: none;
+  }
+  
+  .content-section.active {
+    display: block;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .content-section p {
+    font-size: 1.2rem;
+    color: #2c3e50;
+  }
+  
+  /* Dashboard Summary */
+  .dashboard-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .summary-card {
+    flex: 1 1 calc(25% - 20px);
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .summary-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #3498db;
+  }
+  
+  .summary-card p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  table thead {
+    background-color: #34495e;
+    color: #ecf0f1;
+  }
+  
+  table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: #f4f4f4;
+  }
+  
+  table tbody tr:hover {
+    background-color: #ddd;
+  }
+  
+  table th {
+    font-weight: bold;
+  }
+
+  /* Form Pengajuan Pindah Jurusan */
+#pengajuan-pindah-jurusan {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  #pengajuan-pindah-jurusan h2 {
+    font-size: 1.8rem;
+    color: #34495e;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  #pengajuan-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  #pengajuan-form label {
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 8px;
+  }
+  
+  #pengajuan-form input,
+  #pengajuan-form select,
+  #pengajuan-form textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #pengajuan-form input:focus,
+  #pengajuan-form select:focus,
+  #pengajuan-form textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+  }
+  
+  #pengajuan-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .submit-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  
+  /* Dropdown and Button Styles */
+  .status-dropdown {
+    padding: 5px;
+    font-size: 0.9rem;
+  }
+  
+  .update-btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .update-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Profile Form */
+  form#profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  form#profile-form label {
+    font-size: 1rem;
+    color: #2c3e50;
+  }
+  
+  form#profile-form input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  form#profile-form button.submit-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form#profile-form button.submit-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Logout Button */
+  .logout-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c0392b;
+  }
+/* pesan untuk mahasiswa dari admin */
+
+.feedback-box {
+  padding: 25px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #555;
+  font-style: italic;
+  white-space: pre-wrap;
+
+  background-color: #dff9fb; /* Biru muda yang menarik */
+  border-left: 5px solid #3498db; /* Sorotan pada sisi kiri */
+  color: #2c3e50; /* Teks warna yang lebih jelas */
+  font-weight: bold; 
+}
+
+.no-feedback {
+  text-align: center;
+  color: #aaa;
+}
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px;
+    }
+  
+    .main-content h1 {
+      font-size: 1.5rem;
+    }
+  
+    .content-section p {
+      font-size: 1rem;
+    }
+  
+    .summary-card {
+      flex: 1 1 calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dashboard {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .main-content {
+      padding: 10px;
+    }
+  
+    .summary-card {
+      flex: 1 1 100%;
+    }
+  }
+  

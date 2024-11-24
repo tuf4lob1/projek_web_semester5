@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Mahasiswa</title>
+  <link rel="stylesheet" href="dashboard_mahasiswa.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Dashboard Mahasiswa</h2>
+      <ul>
+        <li><a href="#dashboard-mahasiswa" class="active">🏠 Dashboard</a></li>
+        <li><a href="#pengajuan-pindah-jurusan">✅ Pindah jurusan</a></li>
+        <li><a href="#status-permohonan">📤 Status Permohonan</a></li>
+        <li><a href="#profile">👤 Profil</a></li>
+        <li><a href="#logout">🚪 Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <h1 id="page-title">Dashboard</h1>
+      </header>
+      <section id="content">
+        <!-- Halaman Dashboard -->
+        <div id="dashboard-mahasiswa" class="content-section active">
+          <p>Selamat datang di Dashboard Mahasiswa! Anda sudah lelah di informatika?. </p>
+          <p>Maka website ini paling tepat untuk anda</p>
+          <p>Silahkan ajukan permohonan pindah jurusan bila anda sudah lelah😊</p>
+        </div>
+
+        <!-- Halaman Pengajuan Pindah Jurusan -->
+        <div id="pengajuan-pindah-jurusan" class="content-section">
+          <h2>Pengajuan Pindah Jurusan</h2>
+          <form id="pengajuan-form">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="nim">NPM:</label>
+            <input type="text" id="nim" name="nim" required>
+
+            <label for="jurusan-tujuan">Jurusan Tujuan:</label>
+            <select id="jurusan-tujuan" name="jurusan-tujuan" required>
+              <option value="">Pilih Jurusan</option>
+              <option value="informatika">Informatika</option>
+              <option value="sistem-informasi">Sistem Informasi</option>
+              <option value="teknik-komputer">Teknik Komputer</option>
+            </select>
+
+            <label for="alasan">Alasan Pindah Jurusan:</label>
+            <textarea id="alasan" name="alasan" required></textarea>
+
+            <label for="file">Masukkan KRS:</label>
+            <input type="file" id="file" name="file">
+
+            <button type="submit" class="submit-btn">Ajukan</button>
+          </form>
+        </div>
+
+        <!-- Halaman Status Permohonan -->
+        <div id="status-permohonan" class="content-section">
+          <h2>Status Permohonan</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Tanggal</th>
+                <th>Jurusan Tujuan</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2024-11-19</td>
+                <td>Informatika</td>
+                <td>Disetujui</td>
+              </tr>
+              <tr>
+                <td>2024-11-18</td>
+                <td>Sistem Informasi</td>
+                <td>Ditolak</td>
+                
+              </tr>
+            </tbody>
+          </table>
+
+          <div id="feedback-container" class="feedback-box">
+            <h3>Pesan admin: Silahkan pergi ke prodi untuk ditindak lanjuti</h3>
+            <p class="no-feedback">Belum ada pesan dari admin.</p>
+         </div>
+         
+
+        </div>
+
+        <!-- Halaman Profil -->
+        <div id="profile" class="content-section">
+          <h2>Profil</h2>
+          <form id="profile-form">
+            <label for="full-name">Nama Lengkap:</label>
+            <input type="text" id="full-name" name="full-name" value="John Doe" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="johndoe@example.com" required>
+            
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" id="phone" name="phone" value="081234567890" required>
+            
+            <button type="submit" class="submit-btn">Perbarui Profil</button>
+          </form>
+        </div>
+
+        <!-- Halaman Logout -->
+        <div id="logout" class="content-section">
+          <p>Apakah anda yakin ingin keluar?</p>
+          <button id="logout-button" class="logout-btn">Keluar</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="dashboard_mahasiswa.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi</title>
+    <link rel="stylesheet" href="registrasi.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>Registrasi</h2>
+            <form id="registerForm">
+                <input type="text" id="name" placeholder="Nama" required>
+                <input type="text" id="npm" placeholder="NPM" required>
+                <input type="text" id="username" placeholder="Username" required>
+
+                <!-- Container untuk Password dengan Ikon Mata -->
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <span id="togglePassword" class="toggle-password">&#128065;</span>
+                </div>
+
+                <button type="submit">BUAT AKUN</button>
+            </form>
+            <p id="successMessage" class="hidden">Akun berhasil terdaftar!</p>
+            <a href="login.html" class="back-to-login">Login</a>
+        </div>
+    </div>
+    <script src="registrasi.js"></script>
+</body>
+</html>

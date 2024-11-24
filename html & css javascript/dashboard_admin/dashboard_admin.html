@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin</title>
+  <link rel="stylesheet" href="dashboard_admin.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Dashboard Admin</h2>
+      <ul>
+        <li><a href="#dashboard" class="active">🏠 Dashboard</a></li>
+        <li><a href="#verification">✅ Verifikasi Permohonan</a></li>
+        <li><a href="#update-status">📤 Ubah Status</a></li>
+        <li><a href="#notifications">🔔 Notifikasi</a></li>
+        <li><a href="#logout">🚪 Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <h1 id="page-title">Dashboard</h1>
+      </header>
+      <section id="content">
+        <div id="dashboard" class="content-section active">
+          <p>Selamat datang di Dashboard Admin! Anda dapat mengelola berbagai fungsi sistem di sini.</p>
+          <div id="dashboard" class="content-section active">          
+          </div>
+          
+        </div>
+        <!-- Halaman Verifikasi Permohonan -->
+        <div id="verification" class="content-section">
+          <p>Halaman Verifikasi Permohonan. Tampilkan daftar permohonan yang membutuhkan persetujuan.</p>
+          <h2>Daftar Permohonan Pindah Jurusan</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>NPM</th>
+                <th>Jurusan Asal</th>
+                <th>Jurusan Tujuan</th>
+                <th>Alasan</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="verification-table-body">
+              <!-- Data akan diisi oleh JavaScript -->
+            </tbody>
+          </table>
+        </div>
+        <!-- Halaman Ubah Status Permohonan -->
+        <div id="update-status" class="content-section">
+          <h2>Ubah Status Permohonan</h2>
+          <p>Di sini Anda dapat memperbarui status pengajuan mahasiswa.</p>
+          <hr>
+          <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>NPM</th>
+                <th>Jurusan Asal</th>
+                <th>Jurusan Tujuan</th>
+                <th>Status Saat Ini</th>
+                <th>Aksi</th>
+                <th>Dokumen</th>
+                <th>Alasan</th>
+              </tr>
+            </thead>
+            <tbody id="update-status-table">
+              <tr>
+                <td>1</td>
+                <td>Budi Santoso</td>
+                <td>12345678</td>
+                <td>Teknik Elektro</td>
+                <td>Teknik Informatika</td>
+                <td>Menunggu Verifikasi</td>
+                <td>
+                  <select class="status-dropdown">
+                    <option value="menunggu">Menunggu Verifikasi</option>
+                    <option value="disetujui">Disetujui</option>
+                    <option value="ditolak">Ditolak</option>
+                  </select>
+                  <button class="message-btn" onclick="openMessageForm('Budi Santoso')">Pesan</button>
+                  <button class="update-btn" onclick="updateStatus('Budi Santoso')">Perbarui</button>
+                </td>
+                <td><a href="dokumen_budi.pdf" target="_blank">Lihat Dokumen</a></td>
+                <td>Ingin fokus pada pengembangan software.</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Siti Aminah</td>
+                <td>87654321</td>
+                <td>Teknik Mesin</td>
+                <td>Teknik Industri</td>
+                <td>Disetujui</td>
+                <td>
+                  <select class="status-dropdown">
+                    <option value="menunggu">Menunggu Verifikasi</option>
+                    <option value="disetujui" selected>Disetujui</option>
+                    <option value="ditolak">Ditolak</option>
+                  </select>
+                  <button class="message-btn" onclick="openMessageForm('Siti Aminah')">Pesan</button>
+                  <button class="update-btn" onclick="updateStatus('Siti Aminah')">Perbarui</button>
+                </td>
+                <td><a href="dokumen_siti.pdf" target="_blank">Lihat Dokumen</a></td>
+                <td>Ingin mendalami manajemen produksi.</td>
+              </tr>
+            </tbody>
+          </table>
+        
+          <!-- Form untuk mengirim pesan -->
+          <div class="admin-section" id="message-form" style="display: none; margin-top: 20px;">
+            <h3>Kirim pesan ke mahasiswa</h3>
+            <p id="student-name"></p>
+            <textarea id="admin-message" rows="4" style="width: 100%;" placeholder="Tulis pesan untuk mahasiswa..."></textarea>
+            <button id="send-message" onclick="sendMessage()">Kirim Pesan</button>
+          </div>
+        </div>
+        
+
+        <!-- Halaman Notifikasi -->
+        <div id="notifications" class="content-section">
+          <p>Halaman Notifikasi. Tampilkan semua pemberitahuan penting untuk admin.</p>
+
+  <ul class="notification-list">
+    <li class="notification-item unread">
+      <span class="notification-text">Pengajuan pindah jurusan dari <strong>Budi Santoso</strong> membutuhkan verifikasi.</span>
+      <button class="mark-read-btn">Tandai Sudah Dibaca</button>
+    </li>
+    <li class="notification-item unread">
+      <span class="notification-text">Pengajuan pindah jurusan dari <strong>Siti Aminah</strong> telah disetujui.</span>
+      <button class="mark-read-btn">Tandai Sudah Dibaca</button>
+    </li>
+    <li class="notification-item">
+      <span class="notification-text">Sistem akan mengalami pemeliharaan pada 25 November 2024 pukul 02:00 WIB.</span>
+    </li>
+  </ul>
+        </div>
+        <!-- Halaman Logout -->
+        <div id="logout" class="content-section">
+          <p>Apakah anda yakin ingin keluar!</p>
+  <button id="logout-button" class="logout-btn">Keluar</button>
+      </section>
+    </main>
+  </div>
+  <script src="dashboard_admin.js"></script>
+</body>
+</html>
